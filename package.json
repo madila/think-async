@@ -1,0 +1,15 @@
+{
+  "name": "Think Async",
+  "version": "1.0.0",
+  "description": "Async Class for Loading Scripts with a callback",
+  "main": "dist/think-async.compiled.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben Madila",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0"
+  }
+}
