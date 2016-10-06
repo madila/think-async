@@ -1,0 +1,22 @@
+{
+  "name": "think-async",
+  "version": "1.0.0",
+  "homepage": "https://github.com/madila/think-async",
+  "authors": [
+    "Ruben <contact@rubenmadila.com>"
+  ],
+  "description": "ES2015 Class for Loading Scripts with a callback",
+  "main": "dist/think-async.compiled.js",
+  "keywords": [
+    "script",
+    "loader"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

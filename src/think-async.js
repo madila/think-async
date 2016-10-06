@@ -1,14 +1,21 @@
 class Async {
-    constructor(id) {
-        this.id = id;
+    constructor() {
+        this.scripts = {};
     }
-    add(url, callback) {
+    add(id, url, callback) {
 
-        let doc = document,
-            id = this.id;
+        let async = this,
+            doc = document;
 
         // If script is present on the page, there is nothing to do here.
-        if (doc.getElementById(id)) { return; }
+        if (doc.getElementById(id)) { async.scripts[id].loaded = true; return; }
+
+        async.scripts[id] = {
+                "url": url,
+                "callback": callback,
+                "loaded": false,
+                "triggered": false
+        };
 
         let fjs = doc.getElementsByTagName('script')[0],
             js = doc.createElement('script');
@@ -18,16 +25,15 @@ class Async {
         id && (js.id = id);
 
         // Do callback, using underscore function check
-        if(!!(callback && callback.constructor && callback.call && callback.apply)) {
-            try {
-                js.addEventListener('load', function() {
-                    callback(js,[id]);
-                });
+
+        js.addEventListener('load', function() {
+            async.scripts[id].loaded = true;
+            if(!!(callback && callback.constructor && callback.call && callback.apply)) {
+                async.scripts[id].triggered = true;
+                callback(js, [id]);
             }
-            catch(err) {
-                console.log(err.message);
-            }
-        }
+        });
+
 
         fjs.parentNode.insertBefore(js, fjs);
     };
