@@ -1,20 +1,8 @@
 'use strict';
 
-var _createClass = function () {
-    function defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }return function (Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
-    };
-}();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-    }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Async = function () {
     function Async(id) {
@@ -29,9 +17,9 @@ var Async = function () {
 
             var doc = document,
                 id = this.id;
-            // underscore function check
 
-            if (doc.getElementById(this.id)) {
+            // If script is present on the page, there is nothing to do here.
+            if (doc.getElementById(id)) {
                 return;
             }
 
@@ -39,7 +27,7 @@ var Async = function () {
                 js = doc.createElement('script');
 
             js.src = url;
-            js.async = true;
+            js.async = "async";
             id && (js.id = id);
 
             // Do callback, using underscore function check

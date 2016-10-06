@@ -6,9 +6,9 @@ class Async {
 
         let doc = document,
             id = this.id;
-        // underscore function check
 
-        if (doc.getElementById(this.id)) {return;}
+        // If script is present on the page, there is nothing to do here.
+        if (doc.getElementById(id)) { return; }
 
         let fjs = doc.getElementsByTagName('script')[0],
             js = doc.createElement('script');
