@@ -1,5 +1,5 @@
 {
-  "name": "Think Async",
+  "name": "think-async",
   "version": "1.0.0",
   "description": "Async Class for Loading Scripts with a callback",
   "main": "dist/think-async.compiled.js",

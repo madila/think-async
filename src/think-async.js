@@ -7,6 +7,7 @@ class Async {
         let async = this,
             doc = document;
 
+
         // If script is present on the page, there is nothing to do here.
         if (doc.getElementById(id)) { async.scripts[id].loaded = true; return; }
 
@@ -24,6 +25,8 @@ class Async {
         js.async = "async";
         id && (js.id = id);
 
+        console.log(js);
+
         // Do callback, using underscore function check
 
         js.addEventListener('load', function() {
@@ -35,7 +38,6 @@ class Async {
         });
 
         fjs.parentNode.insertBefore(js, fjs);
-
 
     };
 
