@@ -34,8 +34,9 @@ class Async {
             }
         });
 
-
         fjs.parentNode.insertBefore(js, fjs);
+
+
     };
 
 }
