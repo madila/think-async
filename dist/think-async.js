@@ -1,21 +1,17 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-        value: true
-});
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Async = exports.Async = function () {
-        function Async() {
-                _classCallCheck(this, Async);
+var ThinkAsync = function () {
+        function ThinkAsync() {
+                _classCallCheck(this, ThinkAsync);
 
                 this.scripts = {};
         }
 
-        _createClass(Async, [{
+        _createClass(ThinkAsync, [{
                 key: "add",
                 value: function add(id, url, callback) {
 
@@ -59,6 +55,8 @@ var Async = exports.Async = function () {
                 }
         }]);
 
-        return Async;
+        return ThinkAsync;
 }();
+
+var Async = new ThinkAsync();
 //# sourceMappingURL=think-async.js.map

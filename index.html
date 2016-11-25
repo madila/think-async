@@ -8,8 +8,7 @@
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thank you <a href="https://twitter.com/StansCycles">@StansCycles</a> for the complimentary Bontrager Flare and a great bike service - highly recommended to shrops cyclists <a href="https://t.co/nGEAt1CQmn">pic.twitter.com/nGEAt1CQmn</a></p>&mdash; Angus King (@angusking) <a href="https://twitter.com/angusking/status/783639240303321088">October 5, 2016</a></blockquote>
 <script src="dist/think-async.js"></script>
 <script>
-    var async = new Async();
-    async.add('twitter', '//platform.twitter.com/widgets.js', function(id) {
+    Async.add('twitter', '//platform.twitter.com/widgets.js', function(id) {
         setTimeout(function() {
             console.log(id, window.twttr);
         }, 500);

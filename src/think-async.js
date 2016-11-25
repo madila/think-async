@@ -1,4 +1,4 @@
-export class Async {
+class ThinkAsync {
     constructor() {
         this.scripts = {};
     }
@@ -44,3 +44,5 @@ export class Async {
     };
 
 }
+
+let Async = new ThinkAsync();
