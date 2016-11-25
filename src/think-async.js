@@ -1,4 +1,4 @@
-class Async {
+export class Async {
     constructor() {
         this.scripts = {};
     }
