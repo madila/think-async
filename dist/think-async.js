@@ -20,15 +20,17 @@ var Async = exports.Async = function () {
                 value: function add(id, url, callback) {
 
                         var async = this,
+                            asyncId = id + '-js',
                             doc = document;
 
                         // If script is present on the page, there is nothing to do here.
-                        if (doc.getElementById(id)) {
+                        if (doc.getElementById(asyncId)) {
                                 async.scripts[id].loaded = true;return;
                         }
 
-                        async.scripts[id] = {
+                        async.scripts[asyncId] = {
                                 "url": url,
+                                "id": id,
                                 "callback": callback,
                                 "loaded": false,
                                 "triggered": false
@@ -39,17 +41,17 @@ var Async = exports.Async = function () {
 
                         js.src = url;
                         js.async = "async";
-                        id && (js.id = id);
+                        id && (js.id = asyncId);
 
                         console.log(js);
 
                         // Do callback, using underscore function check
 
                         js.addEventListener('load', function () {
-                                async.scripts[id].loaded = true;
+                                async.scripts[asyncId].loaded = true;
                                 if (!!(callback && callback.constructor && callback.call && callback.apply)) {
-                                        async.scripts[id].triggered = true;
-                                        callback(js, [id]);
+                                        async.scripts[asyncId].triggered = true;
+                                        callback(js, [asyncId]);
                                 }
                         });
 
