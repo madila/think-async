@@ -32,14 +32,11 @@ var ThinkAsync = function () {
                                 "triggered": false
                         };
 
-                        var fjs = doc.getElementsByTagName('script')[0],
-                            js = doc.createElement('script');
+                        var js = doc.createElement('script');
 
                         js.src = url;
                         js.async = "async";
                         id && (js.id = asyncId);
-
-                        console.log(js);
 
                         // Do callback, using underscore function check
 
@@ -51,7 +48,7 @@ var ThinkAsync = function () {
                                 }
                         });
 
-                        fjs.parentNode.insertBefore(js, fjs);
+                        document.getElementsByTagName('head')[0].appendChild(js);
                 }
         }]);
 

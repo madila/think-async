@@ -20,14 +20,11 @@ class ThinkAsync {
                 "triggered": false
         };
 
-        let fjs = doc.getElementsByTagName('script')[0],
-            js = doc.createElement('script');
+        let js = doc.createElement('script');
 
         js.src = url;
         js.async = "async";
         id && (js.id = asyncId);
-
-        console.log(js);
 
         // Do callback, using underscore function check
 
@@ -39,7 +36,7 @@ class ThinkAsync {
             }
         });
 
-        fjs.parentNode.insertBefore(js, fjs);
+        document.getElementsByTagName('head')[0].appendChild(js);
 
     };
 
